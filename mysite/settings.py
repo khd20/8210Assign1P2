@@ -14,13 +14,14 @@ import os
 import dj_database_url
 from django.core.urlresolvers import reverse_lazy
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 #LOGOUT_URL = reverse_lazy('logout')
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresl',
         'NAME': 'd7vroo3qrruvd2',
         'USER': 'mapaqcbsbmepwg',
         'PASSWORD': 'c9985f9cabb04df06efbdabd2795a4060374bb1f750c5012eb85e3832d71c5f3',
@@ -161,6 +162,8 @@ DATABASES['default'] = dj_database_url.config()
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
 
