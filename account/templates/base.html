@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "static/css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <span class="logo">Welcome to Kim's Poll Application</span>
+
+
+        <span class="user">
+        {% if request.user.is_authenticated %}
+             Feel free to{{ request.user.first_name }},
+
+            <a href="{% url "login" %}">Log-in</a>
+        {% endif %}
+        </span>
+
+    {% if request.user.is_authenticated %}
+        <ul class="menu">
+            <li {% if section == "dashboard" %}class="selected"{% endif %}><a href="{% url "dashboard" %}">Dashboard</a></li>
+
+
+        </ul>
+        {% endif %}
+
+    </div>
+
+
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
