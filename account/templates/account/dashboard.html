@@ -6,8 +6,10 @@
     <h1>Dashboard</h1>
     <p>Welcome to 2018 Poll Survey </p>
 
+    <p><li {% if section == "Logout" %}class="selected"{% endif %}><a href="{% url "logout" %}">Logout</a></li></p>
+
     <p><li {% if section == "Polls" %}class="selected"{% endif %}><a href="{% url "polls:index" %}">Polls Application</a></li></p>
-    p><li {% if section == "Logout" %}class="selected"{% endif %}><a href="{% url "logout" %}">Logout</a></li></p>
+
 
 
 

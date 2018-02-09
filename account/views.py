@@ -6,7 +6,6 @@ from .forms import LoginForm
 
 
 
-
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -21,9 +20,9 @@ def user_login(request):
                     return HttpResponse('Disabled account')
             else:
                 return HttpResponse('Invalid login')
-        else:
-            form = LoginForm()
-        return render(request, 'account/login.html', {'form': form})
+    else:
+        form = LoginForm()
+    return render(request, 'account/login.html', {'form': form})
 
 
 def user_logout(request):
@@ -32,6 +31,6 @@ def user_logout(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section':'dashboard'})
+    return render(request, 'account/dashboard.html', {'section': dashboard})
 
 # Create your views here.

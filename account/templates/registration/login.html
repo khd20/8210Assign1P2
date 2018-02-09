@@ -19,4 +19,7 @@
 
         </form>
     </div>
+
+<p><li {% if section == "Polls" %}class="selected"{% endif %}><a href="{% url "polls:index" %}">Polls Application</a></li></p>
+
 {%  endblock %}
