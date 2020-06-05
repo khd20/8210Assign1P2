@@ -5,7 +5,7 @@ celery==3.1.18
 certifi==2017.11.5
 chardet==3.0.4
 dj-database-url==0.4.2
-Django==1.11.2
+Django==1.11.29
 django-braces==1.8.1
 django-chatrooms==1.2a0.dev0
 django-embed-video==1.0.0
