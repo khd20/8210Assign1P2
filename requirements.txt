@@ -28,7 +28,7 @@ selenium==3.7.0
 simplejson==3.11.1
 six==1.11.0
 South==1.0.2
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 whitenoise==3.3.0
 yahoo-finance==1.4.0
